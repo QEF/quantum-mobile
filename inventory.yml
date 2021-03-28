@@ -10,9 +10,9 @@ all:
 
   vars:
     # VM Metadata
-    vm_name: "Quantum Mobile"
+    vm_name: "Quantum Mobile QE2021"
     vm_version: "20.11.2a"
-    vm_description: "A Virtual Machine for Computational Materials Science"
+    vm_description: "A Virtual Machine for QE"
     vm_url: "https://github.com/marvel-nccr/marvel-virtualmachine"
     vm_author: "MARVEL NCCR and MaX CoE"
     vm_author_url: "http://nccr-marvel.ch"
