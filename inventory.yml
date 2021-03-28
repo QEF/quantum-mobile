@@ -33,7 +33,7 @@ all:
     vm_examples_folder: "${HOME}/examples"
     vm_headless: false
     vm_browser: chromium-browser  # 'chromium-browser' or 'firefox'
-    vm_scheduler: slurm  # 'slurm' or 'direct'
+    vm_scheduler: 'direct'  # 'slurm' or 'direct'
 
     # Python virtual environments base location
     aiida_venv_base: "${HOME}/.virtualenvs"

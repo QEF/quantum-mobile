@@ -88,6 +88,30 @@
       quantum_espresso_version: 6.7.0
       quantum_espresso_src_archive: "{{ quantum_espresso_git_tag }}.tar.gz" 
       quantum_espresso_url: "https://github.com/QEF/q-e/archive/refs/tags/{{ quantum_espresso_src_archive }}"
+
+  - role: geerlingguy.nodejs  # this is used by jupyterlab and aiidalab
+    tags: [aiida, nodejs]
+    become: true
+    become_user: "{{ root_user }}"
+    vars:
+      nodejs_version: 12.x
+      nodejs_install_npm_user: "{{ root_user }}"
+
+  - role: marvel-nccr.aiida
+    tags: [aiida]
+    become: true
+    become_user: "{{ vm_user }}"
+    vars:
+      aiida_source_folder: "{{ vm_codes_folder }}"
+      aiida_data_folder: "{{ vm_data_folder }}/aiida"
+      aiida_computer_cpus: "{{ vm_cpus }}"
+      aiida_computer_scheduler: "{{ vm_scheduler }}"
+      aiida_examples_folder: "{{ vm_examples_folder }}"
+      aiida_venv: "{{ aiida_venv_base }}/aiida"
+      aiida_jupyter_venv: "{{ aiida_venv_base }}/jupyter"
+      aiida_venv_constraints: "{{ vm_data_folder }}/aiida/constraints.txt"
+
+
   post_tasks:
 
 
